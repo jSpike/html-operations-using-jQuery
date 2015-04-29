@@ -23,6 +23,15 @@
       		newItem = "<li>"+item.name+"</li>";
       		$("#clickPID").append(newItem);
       	});
+      	/*parsing json string using jQuery*/
+      	var json = '[{"id":"1","tagName":"apple"},{"id":"2","tagName":"orange"},{"id":"3","tagName":"banana"},{"id":"4","tagName":"watermelon"},{"id":"5","tagName":"pineapple"}]';
+      	$.each($.parseJSON(json), function(i, obj){
+      		console.log(json+"--first--"+i);
+      	});
+
+      	$.each(JSON.parse(json), function(i, obj){
+      		console.log(json+"--second--"+i);
+      	});
       });
     </script>
 </html>
