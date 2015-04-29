@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>
+   
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+    	<p id="clickPID"> click me </p>
+    </div>
+  </body>
+      <script type="text/javascript">
+        var newItem;
+        $("#clickPID").on("click", function(d){
+      	console.log("clicked!!");
+      	$("#clickPID").contents().remove();
+      	//$("#clickPID").hide(900);
+      	//$("#clickPID").fadeOut(1500);
+      	//$("#clickPID").toggle();
+      	var data = [{"name":"tes0","value":25524},{"name":"test1","value":25525},{"name":"test2","value":25526},{"name":"test3","value":25527},{"name":"test4","value":25528},{"name":"test5","value":25529},{"name":"test6","value":25530}];
+      	$.each(data , function(i, item){
+      		newItem = "<li>"+item.name+"</li>";
+      		$("#clickPID").append(newItem);
+      	});
+      });
+    </script>
+</html>
