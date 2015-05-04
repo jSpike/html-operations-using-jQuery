@@ -4,14 +4,28 @@
    
     </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style> 
+	#panel, #flip {
+    	padding: 5px;
+    	text-align: center;
+    	background-color: #e5eecc;
+    	border: solid 1px #c3c3c3;
+	}
+	#panel {
+	    padding: 50px;
+	    display: none;
+	}
+</style>
   </head>
   <body>
     <div>
     	<p id="clickPID"> click me </p>
     </div>
+    <div id="flip">Click to slide down panel</div>
+	<div id="panel">Hello world!</div>
   </body>
       <script type="text/javascript">
-        var newItem;
+        var newItem, clickCount=0;
         $("#clickPID").on("click", function(d){
       	console.log("clicked!!");
       	$("#clickPID").contents().remove();
@@ -33,5 +47,22 @@
       		console.log(json+"--second--"+i);
       	});
       });
+
+		$("#flip").on("click", function(){
+			if(clickCount == 0){
+				$("#panel").slideDown("slow");
+				$("#flip").html("Click to slide up panel");
+				clickCount = 1;
+			} else {
+				$("#panel").slideUp("slow");
+					$("#flip").html("Click to slide down panel");
+				clickCount = 0;
+			}
+        
+        
+    	});
     </script>
+    <script> 
+
+</script>
 </html>
