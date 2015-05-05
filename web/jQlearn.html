@@ -20,6 +20,8 @@
   <body>
     <div>
     	<p id="clickPID"> click me </p>
+      <p id="maxVal" ></p>
+      <p id="minVal"></p>
     </div>
     <div id="flip">Click to slide down panel</div>
 	<div id="panel">Hello world!</div>
@@ -37,6 +39,17 @@
       		newItem = "<li>"+item.name+"</li>";
       		$("#clickPID").append(newItem);
       	});
+
+        /* max value from json*/
+        var max = Math.max.apply(Math, data.map(function(d){return d.value;}))
+        console.log(max);
+        $("#maxVal").html(max);
+
+        /* min value from json*/
+        var min = Math.min.apply(Math, data.map(function(d){ return d.value;}))
+        console.log(min);
+        $("#minVal").html(min);
+
       	/*parsing json string using jQuery*/
       	var json = '[{"id":"1","tagName":"apple"},{"id":"2","tagName":"orange"},{"id":"3","tagName":"banana"},{"id":"4","tagName":"watermelon"},{"id":"5","tagName":"pineapple"}]';
       	$.each($.parseJSON(json), function(i, obj){
@@ -60,8 +73,6 @@
 					$("#flip").html("Click to slide down panel");
 				clickCount = 0;
 			}
-        
-        
     	});
     </script>
     <script> 
