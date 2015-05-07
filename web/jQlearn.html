@@ -40,12 +40,12 @@
       		$("#clickPID").append(newItem);
       	});
 
-        /* max value from json*/
+        /* max value from json using jquery method*/
         var max = Math.max.apply(Math, data.map(function(d){return d.value;}))
         console.log(max);
         $("#maxVal").html(max);
 
-        /* min value from json*/
+        /* min value from json usig jquery method*/
         var min = Math.min.apply(Math, data.map(function(d){ return d.value;}))
         console.log(min);
         $("#minVal").html(min);
