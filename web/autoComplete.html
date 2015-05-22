@@ -36,13 +36,13 @@
     var position = data.map(function(d){
       return d.position;
     })
-    console.log("-----"+employeeNames);
-    console.log("-----"+position);
+    //console.log("-----"+employeeNames);
+    //console.log("-----"+position);
     var uniqueEmpNames = toGetUniqueValue(employeeNames);
-    console.log("------>>>>>"+uniqueEmpNames);  
+    //console.log("------>>>>>"+uniqueEmpNames);  
     var uniquePosition = toGetUniqueValue(position);
     var totalList = $.merge(uniqueEmpNames,uniquePosition);
-    console.log(totalList);
+    //console.log(totalList);
     $( "#typedNames" ).autocomplete({
       source: totalList
     });
